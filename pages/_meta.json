@@ -1,6 +1,7 @@
 {
   "index": "Home",
-  "advanced": "FiveM",
+  "FiveM": "FiveM",
+  "txAdmin": "txAdmin",
   "about": {
     "title": "About",
     "type": "page"

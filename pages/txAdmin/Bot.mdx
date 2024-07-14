@@ -1,0 +1,50 @@
+import {Steps} from 'nextra-theme-docs';
+import {Callout} from 'nextra/components';
+import LinkButton from '../../components/link_button';
+
+# Discord Bot
+
+In this guide I will be explaining how to configure the Discord bot from txAdmin
+
+The guide consists of the following parts:
+
+- Discord Developer Portal
+- txAdmin settings
+
+## Discord Developer Portal
+
+<Steps>
+
+### Head over to the Developer Portal
+
+- Go [the developer portal](https://discord.com/developers).
+- Create a <LinkButton text={"New Application"} image={"https://r2.fivemanage.com/pub/x657l24egm3s.png"} />.
+- Enter a name, accept the ToS, and click Create.
+- On the General Information page, click OAuth2 on the left.
+- Under Scopes, <LinkButton text={"select bot"} image={"https://r2.fivemanage.com/pub/4za975xkvhxk.png"}/>.
+- Under Bot Permissions, select <LinkButton text={"Send Messages and Embed Links"} image={"https://r2.fivemanage.com/pub/ktvkk3op3szo.png"}/>.
+- Scroll down, copy the generated URL and open it in a new browser tab.
+- Select the Discord server and click Continue.
+- The bot/application has now joined your Discord server.
+- Go back to the Developer Portal and click Bot.
+- Click <LinkButton text={"Reset Token"} image={"https://r2.fivemanage.com/pub/qs1rv1uwlczh.png"}/> and copy the bot token. You can save this in a notepad for now.
+- Ensure <LinkButton text={"Privileged Gateway Intents"} image={"https://r2.fivemanage.com/pub/9j9zc7ngqz7a.png"}/> are enabled.
+- You can now close this tab and go back to your txAdmin web panel.
+
+<Callout type="error">
+**Never share your Discord bot token with anyone!**
+</Callout>
+
+### txAdmin settings
+
+- In txAdmin, head over to "Settings -> Discord".
+- You should now be at a page that looks like <LinkButton text={"this"} image={"https://r2.fivemanage.com/pub/g57vdoln31kg.png"}/>.
+- Make sure to enable the bot with the switch.
+- Copy the Discord token that we kept in the notepad earlier in the "Token" field.
+- Enable Discord developer mode: Settings -> Advanced -> Developer mode.
+- Go to Discord, right click your Discord server and click "Copy Server ID".
+- If you want the bot to send announcements to the Discord, paste the channel ID that you want to use.
+- Click "Save Discord Settings".
+
+
+</Steps>
