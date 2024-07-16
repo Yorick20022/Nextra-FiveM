@@ -13,7 +13,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 500,
+    width: "",
     boxShadow: 24,
 };
 
@@ -40,7 +40,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({ text, image }) => {
                 aria-labelledby="parent-modal-title"
                 aria-describedby="parent-modal-description"
             >
-                <Box sx={{ ...style, width: 500 }}>
+                <Box sx={{ ...style, width: 700 }}>
                     <img src={image} alt={text} style={{ width: "100%", height: "100%" }} />
                 </Box>
             </Modal>
