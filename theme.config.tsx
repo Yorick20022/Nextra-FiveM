@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 function useHead() {
   const { asPath } = useRouter();
   const { frontMatter, title } = useConfig();
+  const url = `https://nextra-five-m.vercel.app${asPath}`;
   const description = frontMatter.description || "Documentation";
   return (
     <>
@@ -12,12 +13,30 @@ function useHead() {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="description" content={description} />
-        {asPath === "/" && <meta name="og:title" content="Docs" />|| <meta name="og:title" content={title + " - Docs"} />}
+      <meta name="og:title" content={title} />
+      {asPath === "/" && <meta name="og:title" content="Docs" />|| <meta name="og:title" content={title + " - Docs"} />}
       <meta name="og:type" content="website" />
       </>
   );
 }
 
+
+function useNextSeoProps() {
+  const { asPath } = useRouter();
+  const arr = asPath.replace(/[-_]/g, ' ').split('/');
+  const rawTitle = arr[arr.length - 1];
+  const title = /[a-z]/.test(rawTitle) && /[A-Z]/.test(rawTitle) ? rawTitle : '%s';
+
+  if (asPath === "/") {
+      return {
+          titleTemplate: `Docs`,
+      }
+  } else {
+      return {
+          titleTemplate: `${title} - Docs`,
+      }
+  }
+}
 
 const config: DocsThemeConfig = {
   logo: <span>Docs</span>,
@@ -26,13 +45,10 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://www.youtube.com/watch?v=xvFZjo5PgG0',
   head: useHead,
+  useNextSeoProps: useNextSeoProps,
   footer: {
-    component: (
-      <span>
-        Documentation made with Nextra
-    </span>
-    )
-  },
+    text: "Powered by Nextra",
+    },
 }
 
 export default config
