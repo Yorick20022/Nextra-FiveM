@@ -1,5 +1,6 @@
 import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
+import { useRouter } from 'next/router';
 
 function useHead() {
   const { asPath } = useRouter();
@@ -24,8 +25,9 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/yorick20022',
   },
   docsRepositoryBase: 'https://www.youtube.com/watch?v=xvFZjo5PgG0',
+  head: useHead,
   footer: {
-    content: (
+    component: (
       <span>
         Documentation made with Nextra
     </span>
