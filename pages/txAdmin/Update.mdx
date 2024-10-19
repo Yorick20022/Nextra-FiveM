@@ -1,0 +1,44 @@
+---
+title: Update
+description: How to update your txAdmin.
+---
+
+import {Steps} from 'nextra-theme-docs';
+import {Callout} from 'nextra/components';
+import LinkButton from '../../components/link_button';
+
+# Update
+
+<Callout>
+This document is created for educational purposes and is not officially endorsed by txAdmin.
+</Callout>
+
+In this guide I will be explaining how to update your txAdmin
+
+The guide consists of the following parts:
+
+- Shutting down server
+- FXServer artifacts
+- Replacing files
+
+## Shutting down the server
+
+<Callout>
+The first thing you should always do when updating your txAdmin is making sure that the server is not running at that moment.
+</Callout>
+
+1. Close the <LinkButton text={"FXServer.exe"} image={"https://r2.fivemanage.com/images/e4MQZEzyaQ1t.png"}/> window in your taskbar.
+2. There are obviously a few ways to do this, my preferred method is pressing `Ctrl + C`while in the terminal because it's reliable and will kill the process 100% of the times.
+3. <LinkButton text={"this"} image={"https://r2.fivemanage.com/images/jbo6lsWrMYtk.png"}/> should be the result of doing that.
+
+## FXServer artifacts
+
+1. <LinkButton text={"this"} image={"https://r2.fivemanage.com/pub/4wehxrmjdogo.jpg"}/> is what the so called "artifacts" look like.
+2. Go to [this website](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) to download the FiveM artifacts.
+3. Install the version with the highest number, <LinkButton text={"example"} image={"https://r2.fivemanage.com/images/0L4U6yaaHVKK.png"}/>.
+
+## Replacing files
+1. Once you have installed the artifacts, it should show up in your downloads as "server-X.7z" like <LinkButton text={"this"} image={"https://r2.fivemanage.com/images/0KyR9QgD6Ysn.png"}/>.
+2. The content should should look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/images/b1SfBgSieJfl.png"}/>.
+3. Select all of the files in here using `Ctrl + A`, head over to your current artifacts folder and replace it with the files that you just installed.
+4. The only thing that is left right now is starting the server again to check if the update has been executed succesfully.
