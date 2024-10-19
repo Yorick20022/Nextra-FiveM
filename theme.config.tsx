@@ -7,19 +7,18 @@ function useHead() {
   const { frontMatter, title } = useConfig();
   const url = `https://nextra-five-m.vercel.app${asPath}`;
   const description = frontMatter.description || "Documentation";
+
   return (
     <>
-      {asPath === "/" && <title>Docs</title> || <title>{title} - Docs</title>}
+      <title>{asPath === "/" ? "Docs" : `${title} - Docs`}</title> {/* Single title element */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="description" content={description} />
-      <meta name="og:title" content={title} />
-      {asPath === "/" && <meta name="og:title" content="Docs" />|| <meta name="og:title" content={title + " - Docs"} />}
+      <meta name="og:title" content={asPath === "/" ? "Docs" : `${title} - Docs`} /> {/* Single og:title element */}
       <meta name="og:type" content="website" />
-      </>
+    </>
   );
 }
-
 
 function useNextSeoProps() {
   const { asPath } = useRouter();
@@ -51,4 +50,4 @@ const config: DocsThemeConfig = {
     },
 }
 
-export default config
+export default config;
