@@ -1,0 +1,72 @@
+---
+title: Master account
+description: This guide will explain how to change the master account
+---
+
+import {Steps} from 'nextra-theme-docs';
+import {Callout} from 'nextra/components';
+import LinkButton from '../../components/link_button';
+
+# Master account
+
+<Callout>
+This document is created for educational purposes and is not officially endorsed by txAdmin.
+</Callout>
+
+In this guide I will be explaining how to change your master account.
+
+The guide consists of the following parts:
+
+- Shutting down server
+- Locating the admins file
+- Changing the value
+
+## Shutting down the server
+
+<Callout>
+The first thing you should always do when making changes to the admin file is making sure that the server is not running at that moment.
+</Callout>
+
+<Steps>
+1. Close the <LinkButton text={"FXServer.exe"} image={"https://r2.fivemanage.com/images/e4MQZEzyaQ1t.png"}/> window in your taskbar.
+2. There are obviously a few ways to do this, my preferred method is pressing `Ctrl + C`while in the terminal because it's reliable and will kill the process 100% of the times.
+3. <LinkButton text={"this"} image={"https://r2.fivemanage.com/images/jbo6lsWrMYtk.png"}/> should be the result of doing that.
+
+## Locating the admins file
+
+- The `admins.json` file is always located inside your `txData` folder.
+- It should be <LinkButton text={"here"} image={"https://r2.fivemanage.com/images/qmqJ3hDqckAv.png"}/>
+- Maybe for you it does not say `.json`, this is because I have my file extension names enabled.
+
+## Changing the value
+1. Open the file, you should now see something like this:
+
+```js
+  {
+    "name": "Yorick",
+    "master": true,
+    "password_hash": "",
+    "providers": {
+      "citizenfx": {
+        "id": "Yorick",
+        "identifier": "",
+        "data": {
+          "name": "Yorick",
+          "profile": "",
+          "nameid": "",
+          "picture": ""
+        }
+      },
+      "discord": {
+        "id": "",
+        "identifier": "",
+        "data": {}
+      }
+    },
+    "permissions": [],
+    "$schema": 1
+  },
+```
+2. Where it says `"master": true`, change that to `false` and apply `true` to the user that you want to be the master account.
+3. Start the server back up again and see if the change has completed successfully.
+</Steps>
