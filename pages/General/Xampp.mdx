@@ -10,10 +10,40 @@ import LinkButton from '../../components/link_button';
 
 # Xampp
 
-## Common errors
+### Common errors
 
-First of all I will start off by naming some common issues that the Xampp Control Panel faces:
+First of all I will start off by addressing the most common issue that Xampp Control Panel faces:
 
 <details>
-  <summary>MySQL has shutdown unexpectedly</summary>
+<summary>MySQL shutdown unexpectedly</summary>
+- In case you have ever seen this error:
+```
+11:02:20  [mysql]   Error: MySQL shutdown unexpectedly.
+11:02:20  [mysql]   This may be due to a blocked port, missing dependencies, 
+11:02:20  [mysql]   improper privileges, a crash, or a shutdown by another method.
+11:02:20  [mysql]   Press the Logs button to view error logs and check
+11:02:20  [mysql]   the Windows Event Viewer for more clues
+11:02:20  [mysql]   If you need more help, copy and post this
+11:02:20  [mysql]   entire log window on the forums
+```
+- Despite your efforts to fix the issue, the error just won't go away.. Extremely frustrating.
+- Anyways, worry no longer because with this one simple trick we can solve all your Xampp issues.. Forever!
 </details>
+
+### Making a database back-up
+
+<Callout>
+First of all it's very important to make a back-up of your database before we delete this pile of shit for once and for all from our PC's
+</Callout>
+
+1. Search on Google how to make an export of the SQL file from the database. This can vary per software you use to manage your database.
+2. Put the exported SQL file in a location that you can remember such as your `Desktop`
+3. Now that we have successfully made a back-up of our database, it's time to continue to the next part.
+
+### Getting rid of Xampp forever
+
+1. On your keyboard, press the key combination `Windows + R` like <LinkButton text={"this"} image={"https://r2.fivemanage.com/images/jLQL15MfW5OY.png"}/>.
+2. In the box that pops up, you type `appwiz.cpl`, like <LinkButton text={"this"} image={"https://r2.fivemanage.com/images/aAvJAD0zaUVZ.png"}/>. Click "OK" or press `Enter`
+3. In all the apps that you find here, look for "XAMPP".
+4. Once you have located the app, right click it and select "Uninstall/change", if it asks you to select yes or no, select yes.
+5. It should now ask you to select yes or no <LinkButton text={"here"} image={"https://r2.fivemanage.com/images/UcOKuIbpS1nc.png"}/>, select Yes. If it asks you to delete the `htdocs` folder, select Yes as well.
