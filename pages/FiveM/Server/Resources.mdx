@@ -1,0 +1,29 @@
+---
+title: Ensuring Resources
+description: Instructions on how to configure and load resources in the server.cfg file
+---
+
+# Starting Resources
+
+To ensure your server loads resources automatically when it starts, you need to configure your `server.cfg` file.
+
+## Adding Resources to `server.cfg`
+
+1. **Open your `server.cfg` file** using a text editor (e.g., Notepad++ or Visual Studio Code).
+2. **Use the `ensure` command** to load individual resources. Example:
+
+```plaintext
+# Ensuring individual resources
+ensure resource1
+ensure resource2
+```
+
+### Using ensure for Resource Folders
+Instead of adding each resource individually, you can load all resources from a folder by using square brackets []:
+
+```plaintext
+# Ensuring all resources in a folder
+ensure [resourcefolder1]
+ensure [resourcefolder2]
+```
+All resources within the specified folders will be automatically loaded when the server starts, making your configuration simpler and more efficient.
