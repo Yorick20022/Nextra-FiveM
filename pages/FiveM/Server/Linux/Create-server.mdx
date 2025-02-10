@@ -7,6 +7,7 @@ description: Guide on how to create a FiveM server using txAdmin
 import { Steps } from 'nextra-theme-docs';
 import { Callout } from 'nextra/components';
 import LinkButton from 'components/link_button.tsx'
+import { Tabs, Tab } from 'nextra/components'
 
 # Creating a FiveM server
 
@@ -19,6 +20,48 @@ This guide expects a certain level of understanding when it comes to computers. 
 <Callout type="warning">
 This guide is written for the Ubuntu distribution. You can still follow it if you are using another one, but some things may not exactly be the same. Google is your friend in that case!
 </Callout>
+
+## Prerequisites
+
+The packages that we will be using in this guide may not automatically be installed on your system. Below I will put a few popular distro's and their command usages.
+
+<Tabs items={['Ubuntu', 'Debian', 'Fedora', 'CentOS', "Arch"]}>
+
+  <Tab>
+```bash
+apt-get install wget
+apt-get install tar
+```
+  </Tab>
+
+  <Tab>
+```bash
+apt install wget
+apt install tar
+```
+</Tab>
+
+  <Tab>
+```bash
+dnf install wget
+dnf install tar
+```
+</Tab>
+
+  <Tab>
+```bash
+dnf install wget
+dnf install tar
+```
+</Tab>
+
+  <Tab>
+```text
+I use arch btw :3
+```
+</Tab>
+
+</Tabs>
 
 ## FXServer
 
