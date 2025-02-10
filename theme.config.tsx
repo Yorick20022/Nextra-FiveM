@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 function useHead() {
   const { asPath } = useRouter();
   const { frontMatter, title } = useConfig();
-  const url = `https://nextra-five-m.vercel.app${asPath}`;
   const description = frontMatter.description || "Documentation";
 
   return (
