@@ -1,0 +1,45 @@
+---
+title: Auto update
+description: Shell script to install the latest Linux artifact from the artifacts API
+---
+
+import LinkButton from 'components/link_button.tsx'
+
+### Shell scripts that pulls the latest Linux artifact and replaces it with the current one you have installed.
+
+```shell
+#!/bin/bash
+
+# Set the API URL
+API_URL="https://changelogs-live.fivem.net/api/changelog/versions/linux/server"
+
+latestVersion=$(curl -s "$API_URL" | jq -r '.latest')
+
+latestDownloadUrl=$(curl -s "$API_URL" | jq -r '.latest_download')
+
+statusCode=$(curl --write-out %{http_code} --silent --output /dev/null $latestDownloadUrl)
+
+if [[ "$statusCode" -eq 200 ]]; then
+  echo "Successfully executed request to the artifacts API"
+
+  echo "Removing old alpine fx.tar.xz"
+  rm -rf alpine/ fx.tar.xz
+  echo "Latest FXServer build: $latestVersion"
+  echo "Installing the last build:"
+  wget --no-verbose $latestDownloadUrl
+  tar xf fx.tar.xz
+
+else
+  echo "There was a problem reaching the artifacts API"
+fi
+```
+
+### Usage:
+
+1. Create a shell script in your `server` directory using `touch auto-update.sh`
+2. Type `nano auto-update.sh`, now paste in the shell script code.
+3. Perform the command `chmod +x auto-update.sh`
+4. Run the file `./auto-update.sh`
+5. <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/m9FZ6K1GrUqH.png"}/> should be the result.
+6. Now you can run the server again with `./run.sh`.
+
