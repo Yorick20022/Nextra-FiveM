@@ -63,6 +63,8 @@ I use arch btw :3
 
 </Tabs>
 
+<Tabs items={['Cfx Default', 'ESX']}>
+<Tab>
 ## FXServer
 
 <Steps>
@@ -116,7 +118,7 @@ Make sure to write this password down somewhere!
 - Click "Next"
 - Make a **short** server name for txAdmin
 - Click <LinkButton text={"Popular recipes"} image={"https://r2.fivemanage.com/images/xhnnaKj61YqV.png"}/>
-- Choose whatever recipe you want, for now we will go with <LinkButton text={"CFX Default FiveM"} image={"https://r2.fivemanage.com/images/AHUi7GgnMbZk.png"}/>
+- Click <LinkButton text={"CFX Default FiveM"} image={"https://r2.fivemanage.com/images/AHUi7GgnMbZk.png"}/>
 - On the "Data Location" step just click "Save"
 - Finally click "Go to recipe deployer"
 - Click "Next"
@@ -143,4 +145,92 @@ Do not share this key with anyone else!
 - If you have forwarded the port 30120 for FXServer, you should now be able to join the server!
 
 </Steps>
+</Tab>
+
+<Tab>
+## FXServer
+
+<Steps>
+
+### Creating the root folder
+
+- Create a folder on your Linux machine with the following command: `mkdir server`, you can call this folder whatever you want, I will call it "server" for now.
+- Now go to that directory using the `cd` command: `cd server`
+- Once again, create a folder, this one we will call "FXServer". I also recommend to leave the name like that as it's used very often. `cd FXServer`
+
+### Installing 
+
+- Because we are already in the FXServer folder now, we will perform the following command, its the `wget` command in Linux which is essentially a command-line utility for downloading files from the web.
+- On your PC you need to browse to [this](https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/) url. Here you should find the artifact with the *highest* number. Right click this artifact and press "Copy link"
+- We will be combining the `wget` command and the URL we just copied to install the artifacts to our Linux machine.
+- Go back to your Linux machine, type `wget` in your terminal followed by the URL you just copied, in my case this is: [this one](https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/12846-0ec3c8f9f6e715e65beca971712384d0300a553a/fx.tar.xz)
+- It should look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/CMN814eSMOC7.png"}/>
+- If you press Enter, you will see that your Linux machine will start installing `fx.tar.xz` to the FXServer folder.
+- If performed correctly, <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/O46cqqtXz8hf.png"}/> should be the result.
+
+### Checking if the artifact has been installed
+- To make sure that we actually installed the artifact correctly, we run the command `ls`, which lists all files/folders in a directory. <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/tC5jA5CyzE0o.png"}/> should be the result.
+
+### Extracting the tar file
+
+- In the command line you type the following command: `tar xf fx.tar.xz`, now press Enter. This command unpacks the archived content of the tar file.
+- Now you should have 2 extra items here, a folder called `alpine` and a file called `run.sh` like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/DOHVjx4sBOdA.png"}/>
+- Once we have verified that we have `alpine` and `run.sh`, we can safely delete `fx.tar.xz` using the following command: `rm fx.tar.xz`. If you type `ls` again, it should only show the `alpine` folder and the `run.sh` file. <LinkButton text={"see"} image={"https://r2.fivemanage.com/image/VcZSj8PEArEr.png"}/>
+
+### Starting the FXServer
+
+- In the Linux terminal type the following: `./run.sh`
+- You will now see the following: <LinkButton text={"here"} image={"https://r2.fivemanage.com/image/D1M8xn9p9uTg.png"}/>
+
+### Accessing txAdmin on the web
+
+- For this step it is required to have the txAdmin port forwarded, by default this is `40120`.
+- To acces txAdmin on the web you will need to browse to `http://ip:40120`
+- If you did that, you will now see the following page: <LinkButton text={"like this"} image={"https://r2.fivemanage.com/image/OV7iBh1zF7MB.png"}/>
+
+- In the console that just opened after starting `run.sh` you will find a pin consisting of 4 digits. You need to fill these 4 digits in on the txAdmin webpage.
+- Click <LinkButton text={"Link Account"} image={"https://r2.fivemanage.com/images/53Zl2ctKexiN.png"}/>
+- If you do not have one, create a Cfx.re account, if you have one, click <LinkButton text={"Continue"} image={"https://r2.fivemanage.com/images/OejE3TvrupOI.png"}/>
+- Now you should see <LinkButton text={"the following"} image={"https://r2.fivemanage.com/images/vhQmHPlunx77.png"}/>, create a password, confirm it 1 more time, accept the "Creator PLA" and click "Register"
+
+<Callout type="warning">
+Make sure to write this password down somewhere!
+</Callout>
+
+- Once you are at <LinkButton text={"this page"} image={"https://r2.fivemanage.com/images/luGdq58q79xn.png"}/> click "Go to the setup page!" in the top left corner.
+- Click "Next"
+- Make a **short** server name for txAdmin
+- Click <LinkButton text={"Popular recipes"} image={"https://r2.fivemanage.com/images/xhnnaKj61YqV.png"}/>
+- Click <LinkButton text={"ESX Legacy"} image={"https://r2.fivemanage.com/image/vAu8jkem0et3.png"}/>
+- On the "Data Location" step just click "Save"
+- Finally click "Go to recipe deployer"
+- Click "Next"
+
+### Cfx Portal
+
+- Now you will need your [Cfx](https://portal.cfx.re) license key
+- Click <LinkButton text={"Sign in with Cfx.re"} image={"https://r2.fivemanage.com/image/eem1KggcJvyk.png"}/>
+- In the navigation bar of the Portal, click <LinkButton text={"Servers"} image={"https://r2.fivemanage.com/image/bIf6kkSRMVxa.png"}/>
+- Click the button that says "Generate key", it should look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/vlUdojnfQovq.png"}/>
+- Display name: Whatever you want, we will call it "Test Server" for now.
+- It should now look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/EOx5RnUccEJx.png"}/>
+- Click "Generate".
+- On the "Server Registration Keys" section you will find your newly created Cfx license key. Hover over your new key and find the "copy" button under "actions" like <LinkButton text={"as shown here"} image={"https://r2.fivemanage.com/image/LeAWyi3ijsVX.png"}/>
+<Callout type="warning">
+Do not share this key with anyone else!
+</Callout>
+
+### txAdmin
+
+- Go back to txAdmin and paste the key, then click "Run Recipe".
+- Since we are using a framework, we are required to use a database, first follow [this](https://docs.yorick.gg/FiveM/Server/Linux/Database) guide and then continue with the current guide.
+- Once the recipe is done executing, click "Next".
+- Scroll down and click "Save & Run Server".
+- If you have forwarded the port 30120 for FXServer, you should now be able to join the server!
+
+</Steps>
+</Tab>
+</Tabs>
+
+
 
