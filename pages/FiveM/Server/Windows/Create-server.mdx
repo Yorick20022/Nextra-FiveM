@@ -3,68 +3,135 @@ title: Create a FiveM server
 description: Guide on how to create a FiveM server using txAdmin
 ---
 
-
 import { Steps } from 'nextra-theme-docs';
 import { Callout } from 'nextra/components';
+import { Tabs, Tab } from 'nextra/components';
 import LinkButton from 'components/link_button.tsx'
 
 # Creating a FiveM server
 
 This guide will show you exactly how to setup a FiveM server with txAdmin in under 5 minutes!
 
-## FXServer
+<Tabs items={['Cfx Default', 'ESX']}>
+        <Tab>
+    ## FXServer
+           <Steps>
 
-<Steps>
+               ### Download
 
-### Download
+               - Go to [this website](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) to download the FiveM artifacts
+               - Install the version with the highest number, <LinkButton text={"example"} image={"https://r2.fivemanage.com/images/0L4U6yaaHVKK.png"} />
 
-- Go to [this website](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) to download the FiveM artifacts
-- Install the version with the highest number, <LinkButton text={"example"} image={"https://r2.fivemanage.com/images/0L4U6yaaHVKK.png"}/>
+               ### Installation
 
-### Installation
+               - Open the `server.zip` file. If you can't find the download, open the downloads using `Ctrl + J`.
+               - Create a new folder on your `C:/` drive. Call it `FiveM` and in that folder create a new folder called `FXServer`.
+               - Go back to the `server.zip` file, copy all the content and paste it in your `FXServer` folder
+               - Once you've put all the content in the `FXServer` folder, scroll down and find `FXServer.exe`, double click it.
 
-- Open the `server.zip` file. If you can't find the download, open the downloads using `Ctrl + J`.
-- Create a new folder on your `C:/` drive. Call it `FiveM` and in that folder create a new folder called `FXServer`.
-- Go back to the `server.zip` file, copy all the content and paste it in your `FXServer` folder
-- Once you've put all the content in the `FXServer` folder, scroll down and find `FXServer.exe`, double click it.
+               ### txAdmin
 
-### txAdmin
+               - On the first setup of the server, txAdmin automatically opens in the browser.
+               - In the console that just opened after starting `FXserver.exe` you will find a pin consisting of 4 digits. This pin is automatically filled in in txAdmin.
+               - Click <LinkButton text={"Link Account"} image={"https://r2.fivemanage.com/images/53Zl2ctKexiN.png"} />
+               - If you do not have one, create a Cfx.re account, if you have one, click <LinkButton text={"Continue"} image={"https://r2.fivemanage.com/images/OejE3TvrupOI.png"} />
+               - Now you should see <LinkButton text={"the following"} image={"https://r2.fivemanage.com/images/vhQmHPlunx77.png"} />, create a password, confirm it 1 more time, accept the "Creator PLA" and click "Register"
+               <Callout type="warning">
+                   Make sure to write this password down somewhere!
+               </Callout>
+               - Once you are at <LinkButton text={"this page"} image={"https://r2.fivemanage.com/images/luGdq58q79xn.png"} /> click "Go to the setup page!" in the top left corner.
+               - Click "Next"
+               - Make a **short** server name for txAdmin
+               - Click <LinkButton text={"Popular recipes"} image={"https://r2.fivemanage.com/images/xhnnaKj61YqV.png"} />
+               - Click <LinkButton text={"CFX Default FiveM"} image={"https://r2.fivemanage.com/images/AHUi7GgnMbZk.png"} />
+               - On the "Data Location" step just click "Save"
+               - Finally click "Go to recipe deployer"
+               - Click "Next"
 
-- On the first setup of the server, txAdmin automatically opens in the browser.
-- In the console that just opened after starting `FXserver.exe` you will find a pin consisting of 4 digits. This pin is automatically filled in in txAdmin.
-- Click <LinkButton text={"Link Account"} image={"https://r2.fivemanage.com/images/53Zl2ctKexiN.png"}/>
-- If you do not have one, create a Cfx.re account, if you have one, click <LinkButton text={"Continue"} image={"https://r2.fivemanage.com/images/OejE3TvrupOI.png"}/>
-- Now you should see <LinkButton text={"the following"} image={"https://r2.fivemanage.com/images/vhQmHPlunx77.png"}/>, create a password, confirm it 1 more time, accept the "Creator PLA" and click "Register"
-<Callout type="warning">
-Make sure to write this password down somewhere!
-</Callout>
-- Once you are at <LinkButton text={"this page"} image={"https://r2.fivemanage.com/images/luGdq58q79xn.png"}/> click "Go to the setup page!" in the top left corner.
-- Click "Next"
-- Make a **short** server name for txAdmin
-- Click <LinkButton text={"Popular recipes"} image={"https://r2.fivemanage.com/images/xhnnaKj61YqV.png"}/>
-- Choose whatever recipe you want, for now we will go with <LinkButton text={"CFX Default FiveM"} image={"https://r2.fivemanage.com/images/AHUi7GgnMbZk.png"}/>
-- On the "Data Location" step just click "Save"
-- Finally click "Go to recipe deployer"
-- Click "Next"
+               ### Cfx Portal
 
-### Cfx Portal
+               - Now you will need your [Cfx](https://portal.cfx.re) license key
+               - Click <LinkButton text={"Sign in with Cfx.re"} image={"https://r2.fivemanage.com/image/eem1KggcJvyk.png"} />
+               - In the navigation bar of the Portal, click <LinkButton text={"Servers"} image={"https://r2.fivemanage.com/image/bIf6kkSRMVxa.png"} />
+               - Click the button that says "Generate key", it should look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/vlUdojnfQovq.png"} />
+               - Display name: Whatever you want, we will call it "Test Server" for now.
+               - It should now look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/EOx5RnUccEJx.png"} />
+               - Click "Generate".
+               - On the "Server Registration Keys" section you will find your newly created Cfx license key. Hover over your new key and find the "copy" button under "actions" like <LinkButton text={"as shown here"} image={"https://r2.fivemanage.com/image/LeAWyi3ijsVX.png"} />
+               <Callout type="warning">
+                   Do not share this key with anyone else!
+               </Callout>
 
-- Now you will need your [Cfx](https://portal.cfx.re) license key
-- Click <LinkButton text={"Sign in with Cfx.re"} image={"https://r2.fivemanage.com/image/eem1KggcJvyk.png"}/>
-- In the navigation bar of the Portal, click <LinkButton text={"Servers"} image={"https://r2.fivemanage.com/image/bIf6kkSRMVxa.png"}/>
-- Click the button that says "Generate key", it should look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/vlUdojnfQovq.png"}/>
-- Display name: Whatever you want, we will call it "Test Server" for now.
-- It should now look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/EOx5RnUccEJx.png"}/>
-- Click "Generate".
-- On the "Server Registration Keys" section you will find your newly created Cfx license key. Hover over your new key and find the "copy" button under "actions" like <LinkButton text={"as shown here"} image={"https://r2.fivemanage.com/image/LeAWyi3ijsVX.png"}/>
-<Callout type="warning">
-Do not share this key with anyone else!
-</Callout>
+               ### txAdmin
 
-### txAdmin
+               - Go back to txAdmin and paste the key, then click "Run Recipe".
+               - Once the recipe is done executing, click "Next".
+               - Scroll down and click "Save & Run Server".
 
-- Go back to txAdmin and paste the key, then click "Run Recipe".
-- Once the recipe is done executing, click "Next".
-- Scroll down and click "Save & Run Server".
+           </Steps>
+   </Tab>
 
-</Steps>
+
+    <Tab>
+    ## FXServer
+           <Steps>
+
+               ### Download
+
+               - Go to [this website](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) to download the FiveM artifacts
+               - Install the version with the highest number, <LinkButton text={"example"} image={"https://r2.fivemanage.com/images/0L4U6yaaHVKK.png"} />
+
+               ### Installation
+
+               - Open the `server.zip` file. If you can't find the download, open the downloads using `Ctrl + J`.
+               - Create a new folder on your `C:/` drive. Call it `FiveM` and in that folder create a new folder called `FXServer`.
+               - Go back to the `server.zip` file, copy all the content and paste it in your `FXServer` folder
+               - Once you've put all the content in the `FXServer` folder, scroll down and find `FXServer.exe`, double click it.
+
+               ### txAdmin
+
+               - On the first setup of the server, txAdmin automatically opens in the browser.
+               - In the console that just opened after starting `FXserver.exe` you will find a pin consisting of 4 digits. This pin is automatically filled in in txAdmin.
+               - Click <LinkButton text={"Link Account"} image={"https://r2.fivemanage.com/images/53Zl2ctKexiN.png"} />
+               - If you do not have one, create a Cfx.re account, if you have one, click <LinkButton text={"Continue"} image={"https://r2.fivemanage.com/images/OejE3TvrupOI.png"} />
+               - Now you should see <LinkButton text={"the following"} image={"https://r2.fivemanage.com/images/vhQmHPlunx77.png"} />, create a password, confirm it 1 more time, accept the "Creator PLA" and click "Register"
+               <Callout type="warning">
+                   Make sure to write this password down somewhere!
+               </Callout>
+               - Once you are at <LinkButton text={"this page"} image={"https://r2.fivemanage.com/images/luGdq58q79xn.png"} /> click "Go to the setup page!" in the top left corner.
+               - Click "Next"
+               - Make a **short** server name for txAdmin
+               - Click <LinkButton text={"Popular recipes"} image={"https://r2.fivemanage.com/images/xhnnaKj61YqV.png"} />
+               - Click <LinkButton text={"ESX Legacy"} image={"https://r2.fivemanage.com/image/vAu8jkem0et3.png"} />
+               - On the "Data Location" step just click "Save"
+               - Finally click "Go to recipe deployer"
+               - Click "Next"
+
+               ### Cfx Portal
+
+               - Now you will need your [Cfx](https://portal.cfx.re) license key
+               - Click <LinkButton text={"Sign in with Cfx.re"} image={"https://r2.fivemanage.com/image/eem1KggcJvyk.png"} />
+               - In the navigation bar of the Portal, click <LinkButton text={"Servers"} image={"https://r2.fivemanage.com/image/bIf6kkSRMVxa.png"} />
+               - Click the button that says "Generate key", it should look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/vlUdojnfQovq.png"} />
+               - Display name: Whatever you want, we will call it "Test Server" for now.
+               - It should now look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/EOx5RnUccEJx.png"} />
+               - Click "Generate".
+               - On the "Server Registration Keys" section you will find your newly created Cfx license key. Hover over your new key and find the "copy" button under "actions" like <LinkButton text={"as shown here"} image={"https://r2.fivemanage.com/image/LeAWyi3ijsVX.png"} />
+               <Callout type="warning">
+                   Do not share this key with anyone else!
+               </Callout>
+
+               ### txAdmin
+
+               - Go back to txAdmin and paste the key, then click "Run Recipe".
+               - Since we are using a framework, we are required to use a database, first follow [this](https://docs.yorick.gg/FiveM/Server/Windows/Database) guide and then continue with the current guide.
+            
+               - Once the recipe is done executing, click "Next".
+               - Scroll down and click "Save & Run Server".
+
+           </Steps>
+   </Tab> 
+
+</Tabs>
+
+
