@@ -7,3 +7,50 @@ import {Steps} from 'nextra-theme-docs';
 import {Callout} from 'nextra/components';
 import { Tabs } from 'nextra/components'
 import LinkButton from '../../components/link_button';
+
+### What is a backdoor?
+
+A backdoor in the context of FiveM (or any software) is like a secret hidden entrance into a system. Imagine you have a house with a locked front door, but someone secretly installs a hidden door that only they know about. This hidden door allows them to get into your house whenever they want, without you knowing.
+
+### Why am I here?
+
+- You are here because your server keeps crashing while you have no clue why this happens. I hate to break it to you, but your server is infected with a backdoor.
+
+### How could this have happened??
+
+- The cause of this problem is installing leaked resources, these resources contain malware.
+
+### Locate the backdoor
+
+<Steps>
+
+### Browse to your resources folder
+1. Open Visual Studio Code
+2. In the top left click "File"
+3. Click "Open Folder"
+4. Browse to your resources folder and open this entire folder in Visual Studio Code.
+
+### Look for the backdoor
+
+1. Press `Ctrl + Shift + F` on your keyboard, a textbox should now appear where you write the following:
+```js
+const _ = Buffer.from
+```
+
+### The result
+
+If your results look like <LinkButton text={"this"} image={"https://r2.fivemanage.com/image/FKeO27usW05q.png"}/>, that means that there is a backdoor in your server.
+</Steps>
+
+### What do I do now???
+
+- Because your Operating System is now infected with malware, the only solution is to reset the entire Operating System.
+
+### How can I prevent this from happening in the future?
+
+- Like mentioned before, the only reason you have this backdoor in your server is because someone, either you or a developer, installed leaked resources into your server. The only place where you should get your resources from is from [the Cfx forums](https://forum.cfx.re/) and Tebex stores.
+
+<Callout type="warning">
+After resetting your entire OS, you can use your old resources just fine BUT make sure they are safe and do not contain the backdoor.
+</Callout>
+
