@@ -40,6 +40,7 @@ Now that we have installed the MSI file, its time to install the application.
 
 ## HeidiSQL
 
+HeidiSQL is used to view and manage the database.
 <Steps>
 
 ### Download HeidiSQL
@@ -57,5 +58,27 @@ Now that we have installed the MSI file, its time to install the application.
 - For the Select Additional Tasks you can decide what options you want to turn on. Press next again.
 - Press "Install"
 - Click "Finish"
+
+### Connect to the server and create a database
+- Open HeidiSQL once the installation is complete
+- In the bottom left, click on "New"
+- Now enter the connection details as follows:
+  - Hostname / IP: If you installed MariaDB on the same machine as HeidiSQL, leave it as `127.0.0.1`. If not, enter the public IP of the machine where MariaDB is installed (Port Forwarding needed)
+  - User: Leave as `root`
+- Press "Open"
+- Right click the server in the top left (usually Unnamed) and press "Create new -> Database"
+- Enter the name of the database and press "OK"
+
+### Add the database to your FiveM server
+- Open your server.cfg file
+- Add one of the following lines to the file (above `ensure oxmysql`):
+```cfg
+set mysql_connection_string "mysql://root:PASSWORD@localhost:3306/DATABASE_NAME"
+```
+```cfg
+set mysql_connection_string "user=root;password=PASSWORD;host=localhost;port=3306;database=DATABASE_NAME"
+```
+- Replace `PASSWORD` with the password you set during the MariaDB installation and `DATABASE_NAME` with the name of the database you created in HeidiSQL
+- Save the file and restart your server
 
 </Steps>
